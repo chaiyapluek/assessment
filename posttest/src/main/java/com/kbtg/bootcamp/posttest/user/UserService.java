@@ -36,7 +36,6 @@ public class UserService {
             throw new InsufficientLotteryException("insufficient lottery " + ticketId + " amount");
         }
         User user = userRepository.findById(userId).orElse(null);
-        System.out.println("user: " + user);
         if (user == null) {
             User newUser = new User();
             newUser.setId(userId);

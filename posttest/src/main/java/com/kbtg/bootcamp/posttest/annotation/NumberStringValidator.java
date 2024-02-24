@@ -22,7 +22,7 @@ public class NumberStringValidator implements ConstraintValidator<NumberString, 
     public boolean isValid(String value, ConstraintValidatorContext context) {
         if (value == null || value.isBlank()) {
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate("cannot be null or empty")
+            context.buildConstraintViolationWithTemplate("cannot be null or empty.")
                     .addConstraintViolation();
             return false;
         }
@@ -42,7 +42,7 @@ public class NumberStringValidator implements ConstraintValidator<NumberString, 
 
         if (!Pattern.matches("^[0-9]*$", value)) {
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate("must be a number")
+            context.buildConstraintViolationWithTemplate("must be a number.")
                     .addConstraintViolation();
             return false;
         }

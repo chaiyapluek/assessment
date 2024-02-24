@@ -14,11 +14,11 @@ Authorization: Basic YWRtaW46cGFzc3dvcmQ=
 
 ###
 
-GET http://localhost:8080/users/1234567890/lotteries HTTP/1.1
+GET http://localhost:8080/users/12345/lotteries HTTP/1.1
 
 ###
 
-POST http://localhost:8080/users/1234567890/lotteries/000005 HTTP/1.1
+POST http://localhost:8080/users/1234567890/lotteries/000001 HTTP/1.1
 
 ###
 

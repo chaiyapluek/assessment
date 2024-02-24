@@ -67,5 +67,4 @@ public class UserController {
         userService.deleteLottery(userId, ticketId);
         return ResponseEntity.status(HttpStatus.OK).body(new DeleteUserTicketResponse(ticketId));
     }
-
 }

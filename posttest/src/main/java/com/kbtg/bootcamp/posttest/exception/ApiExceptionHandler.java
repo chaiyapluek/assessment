@@ -50,17 +50,17 @@ public class ApiExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
-    // @ExceptionHandler(value = {Exception.class})
-    // public ResponseEntity<ApiExceptionResponse> handleException(Exception e) {
-    //     System.out.println(e.getMessage());
-    //     ApiExceptionResponse response = new ApiExceptionResponse("internal server error", ZonedDateTime.now());
-    //     return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
-    // }
+    @ExceptionHandler(value = {Exception.class})
+    public ResponseEntity<ApiExceptionResponse> handleException(Exception e) {
+        System.out.println(e.getMessage());
+        ApiExceptionResponse response = new ApiExceptionResponse("internal server error", ZonedDateTime.now());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+    }
 
-    // @ExceptionHandler(value = {RuntimeException.class})
-    // public ResponseEntity<ApiExceptionResponse> handleRuntimeException(RuntimeException e) {
-    //     System.out.println(e.getMessage());
-    //     ApiExceptionResponse response = new ApiExceptionResponse("internal server error", ZonedDateTime.now());
-    //     return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
-    // }
+    @ExceptionHandler(value = {RuntimeException.class})
+    public ResponseEntity<ApiExceptionResponse> handleRuntimeException(RuntimeException e) {
+        System.out.println(e.getMessage());
+        ApiExceptionResponse response = new ApiExceptionResponse("internal server error", ZonedDateTime.now());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+    }
 }

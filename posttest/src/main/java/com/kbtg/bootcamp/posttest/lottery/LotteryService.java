@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.kbtg.bootcamp.posttest.exception.DuplicateException;
+
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 
@@ -25,7 +27,7 @@ public class LotteryService {
     public Lottery createLottery(@Valid Lottery lottery) {
         Optional<Lottery> tmp = lotteryRepositoty.findById(lottery.getId());
         if (tmp.isPresent()) {
-            throw new IllegalArgumentException("Lottery number " + lottery.getId() +" is already exist");
+            throw new DuplicateException("lottery " + lottery.getId() + " is already exist");
         }
         return lotteryRepositoty.save(lottery);
     }

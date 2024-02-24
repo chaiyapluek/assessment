@@ -1,13 +1,12 @@
 package com.kbtg.bootcamp.posttest.lottery;
 
-import jakarta.annotation.PostConstruct;
+import com.kbtg.bootcamp.posttest.annotation.NumberString;
+
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
 
 public record CreateLotteryDto(
-    @NotNull
-    @Size(min = 6, max = 6, message = "ticket must be 10 characters")
+    @NumberString(min = 6, max = 6)
     String ticket,
 
     @NotNull
@@ -15,7 +14,7 @@ public record CreateLotteryDto(
     Integer price,
 
     @NotNull
-    @PostConstruct
+    @Positive
     Integer amount
 ) {
     

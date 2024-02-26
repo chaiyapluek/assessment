@@ -9,9 +9,9 @@ Content-Type: application/json
 Authorization: Basic YWRtaW46cGFzc3dvcmQ=
 
 {
-  "ticket": "000006",
+  "ticket": "000001",
   "price": 120,
-  "amount": 2
+  "amount": 10
 }
 
 ###
@@ -20,7 +20,7 @@ GET {{url}}/users/1234567890/lotteries HTTP/1.1
 
 ###
 
-POST {{url}}/users/1234567890/lotteries/000006 HTTP/1.1
+POST {{url}}/users/1234567890/lotteries/000001 HTTP/1.1
 
 ###
 
